@@ -14,6 +14,8 @@ import java.util.Vector;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
+
+
 /**
  *
  * @author Administrador
@@ -31,6 +33,10 @@ public class ControladorEmpresa {
         } else {
             JOptionPane.showMessageDialog(null, "Erro!");
         }
+        if (man.listagem != null) {
+     atualizarTabela(man.listagem.tabela); //atualizar a tabela da listagem
+}
+man.dispose();//fechar a tela da manutenção
 }
     public static void atualizarTabela(JTable tabela) {
         DefaultTableModel modelo = new DefaultTableModel();
@@ -64,6 +70,10 @@ public class ControladorEmpresa {
         } else {
             JOptionPane.showMessageDialog(null, "Erro!");
         }
+        if (man.listagem != null) {
+     atualizarTabela(man.listagem.tabela); //atualizar a tabela da listagem
+}
+man.dispose();//fechar a tela da manutenção
     }
 
      public static void excluir(ManutencaoEmpresa man){
@@ -76,5 +86,19 @@ public class ControladorEmpresa {
         } else {
             JOptionPane.showMessageDialog(null, "Erro!");
         }
+        if (man.listagem != null) {
+     atualizarTabela(man.listagem.tabela); //atualizar a tabela da listagem
+}
+man.dispose();//fechar a tela da manutenção
+    }
+     public static void atualizaCampos(ManutencaoEmpresa man, int pk){ 
+        Empresa objeto = DaoEmpresa.consultar(pk);
+        //Definindo os valores do campo na tela (um para cada atributo/campo)
+        man.jtfcodigo.setText(objeto.getCodigo().toString());
+        man.jtfnome_fantasia.setText(objeto.getNome_fantasia());
+        man.jtfrazao_social.setText(objeto.getRazao_social());
+        
+        man.jtfcodigo.setEnabled(false); //desabilitando o campo código
+        man.btnAdicionar.setEnabled(false); //desabilitando o botão adicionar
     }
 }
