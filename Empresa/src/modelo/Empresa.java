@@ -13,6 +13,8 @@ public class Empresa {
     private Integer codigo;
     private String nome_fantasia;
     private String razao_social;
+    private String horario_abertura;
+    private String data_fundacao;
 
     public Integer getCodigo() {
         return codigo;
@@ -41,6 +43,22 @@ public class Empresa {
     @Override
     public String toString() {
         return nome_fantasia ;
+    }
+
+    public String getHorario_abertura() {
+        return horario_abertura;
+    }
+
+    public void setHorario_abertura(String horario_abertura) {
+        this.horario_abertura = horario_abertura;
+    }
+
+    public String getData_fundacao() {
+        return data_fundacao;
+    }
+
+    public void setData_fundacao(String data_funcionamento) {
+        this.data_fundacao = data_funcionamento;
     }
     
 }

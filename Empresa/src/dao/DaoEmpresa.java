@@ -18,11 +18,13 @@ import java.util.List;
  */
 public class DaoEmpresa {
      public static boolean inserir(Empresa objeto) {
-        String sql = "INSERT INTO empresa (nome_fantasia, razao_social) VALUES (?, ?)";
+        String sql = "INSERT INTO empresa (nome_fantasia, razao_social, horario_abertura, data_fundacao) VALUES (?, ?, ?, ?)";
         try {
             PreparedStatement ps = conexao.Conexao.getConexao().prepareStatement(sql);
             ps.setString(1, objeto.getNome_fantasia());
             ps.setString(2, objeto.getRazao_social());
+            ps.setString(3, objeto.getHorario_abertura());
+            ps.setString(4, objeto.getData_fundacao());
             ps.executeUpdate();
             return true;
         } catch (SQLException | ClassNotFoundException ex) {
@@ -33,6 +35,8 @@ public class DaoEmpresa {
       public static void main(String[] args) {
         Empresa objeto = new Empresa();
         objeto.setNome_fantasia("Cotriba");
+        objeto.setRazao_social("Cotrial");
+        objeto.setRazao_social("Cotrial");
         objeto.setRazao_social("Cotrial");
         
         boolean resultado = inserir(objeto);
