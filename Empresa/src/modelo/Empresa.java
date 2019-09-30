@@ -3,13 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package modelo;
 
+package modelo;
 /**
  *
  * @author Administrador
  */
 public class Empresa {
+    
     private Integer codigo;
     private String nome_fantasia;
     private String razao_social;
