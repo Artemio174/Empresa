@@ -5,6 +5,8 @@
  */
 package controlador;
 import dao.DaoEmpresa;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import javax.swing.JOptionPane;
 import modelo.Empresa;
 import tela.manutencao.ManutencaoEmpresa;
@@ -26,7 +28,8 @@ public class ControladorEmpresa {
         Empresa objeto = new Empresa();
         objeto.setNome_fantasia(man.jtfnome_fantasia.getText());
         objeto.setRazao_social(man.jtfrazao_social.getText());
-        
+        objeto.setHorario_abertura(man.jtfhorario_abertura.getText());
+        objeto.setData_fundacao(LocalDate.parse(man.jtfdata_fundacao.getText(), DateTimeFormatter.ofPattern("dd/MM/yyyy")));
         boolean resultado = DaoEmpresa.inserir(objeto);
         if (resultado) {
             JOptionPane.showMessageDialog(null, "Inserido com sucesso!");
@@ -44,6 +47,8 @@ man.dispose();//fechar a tela da manutenção
         modelo.addColumn("Código");
         modelo.addColumn("Nome Fantasia");
         modelo.addColumn("Razão Social");
+        modelo.addColumn("Horario de Abertura");
+        modelo.addColumn("Data de Fundação");
         List<Empresa> resultados = DaoEmpresa.consultar();
         for (Empresa objeto : resultados) {
             Vector linha = new Vector();
@@ -52,6 +57,8 @@ man.dispose();//fechar a tela da manutenção
             linha.add(objeto.getCodigo());
             linha.add(objeto.getNome_fantasia());
             linha.add(objeto.getRazao_social());
+            linha.add(objeto.getHorario_abertura());
+            linha.add(objeto.getData_fundacao());
             modelo.addRow(linha); //adicionando a linha na tabela
         }
         tabela.setModel(modelo);
@@ -63,6 +70,8 @@ man.dispose();//fechar a tela da manutenção
         objeto.setCodigo(Integer.parseInt(man.jtfcodigo.getText()));
         objeto.setNome_fantasia(man.jtfnome_fantasia.getText());
         objeto.setRazao_social(man.jtfrazao_social.getText());
+        objeto.setHorario_abertura(man.jtfhorario_abertura.getText());
+        objeto.setData_fundacao(LocalDate.parse(man.jtfdata_fundacao.getText(), DateTimeFormatter.ofPattern("dd/MM/yyyy")));
         
         boolean resultado = DaoEmpresa.alterar(objeto);
         if (resultado) {
@@ -97,6 +106,8 @@ man.dispose();//fechar a tela da manutenção
         man.jtfcodigo.setText(objeto.getCodigo().toString());
         man.jtfnome_fantasia.setText(objeto.getNome_fantasia());
         man.jtfrazao_social.setText(objeto.getRazao_social());
+        man.jtfhorario_abertura.setText(objeto.getHorario_abertura());
+       man.jtfdata_fundacao.setText(objeto.getData_fundacao().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
         
         man.jtfcodigo.setEnabled(false); //desabilitando o campo código
         man.btnAdicionar.setEnabled(false); //desabilitando o botão adicionar

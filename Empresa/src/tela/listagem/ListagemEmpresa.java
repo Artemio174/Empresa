@@ -45,13 +45,13 @@ public class ListagemEmpresa extends javax.swing.JDialog {
 
         tabela.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Código", "Nome Fantasia", "Razão Social"
+                "Código", "Nome Fantasia", "Razão Social", "Horario de Abertura", "Data de fundação"
             }
         ));
         tabela.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -102,7 +102,7 @@ public class ListagemEmpresa extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoActionPerformed
-ManutencaoEmpresa manutencao = new ManutencaoEmpresa(null, true, this);
+ ManutencaoEmpresa manutencao = new ManutencaoEmpresa(null, true, this);
 manutencao.setVisible(true);        // TODO add your handling code here:
     }//GEN-LAST:event_btnNovoActionPerformed
 

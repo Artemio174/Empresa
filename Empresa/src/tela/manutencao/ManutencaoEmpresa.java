@@ -56,6 +56,10 @@ public class ManutencaoEmpresa extends javax.swing.JDialog {
         btnAdicionar = new javax.swing.JButton();
         btnAlterar = new javax.swing.JButton();
         btnExcluir = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        jtfhorario_abertura = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        jtfdata_fundacao = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -89,6 +93,10 @@ public class ManutencaoEmpresa extends javax.swing.JDialog {
             }
         });
 
+        jLabel5.setText("Horário de Abertura:");
+
+        jLabel6.setText("Data de Fundação:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -103,8 +111,10 @@ public class ManutencaoEmpresa extends javax.swing.JDialog {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel3)
                             .addComponent(jLabel2)
+                            .addComponent(btnAdicionar)
                             .addComponent(jLabel4)
-                            .addComponent(btnAdicionar))
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel6))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jtfcodigo)
@@ -113,8 +123,10 @@ public class ManutencaoEmpresa extends javax.swing.JDialog {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(btnAlterar)
                                 .addGap(18, 18, 18)
-                                .addComponent(btnExcluir)))))
-                .addContainerGap(38, Short.MAX_VALUE))
+                                .addComponent(btnExcluir))
+                            .addComponent(jtfhorario_abertura)
+                            .addComponent(jtfdata_fundacao))))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -133,12 +145,20 @@ public class ManutencaoEmpresa extends javax.swing.JDialog {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(jtfrazao_social, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(jtfhorario_abertura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jtfdata_fundacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAdicionar)
                     .addComponent(btnAlterar)
                     .addComponent(btnExcluir))
-                .addGap(55, 55, 55))
+                .addGap(26, 26, 26))
         );
 
         pack();
@@ -209,7 +229,11 @@ controlador.ControladorEmpresa.excluir(this);
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     public javax.swing.JTextField jtfcodigo;
+    public javax.swing.JTextField jtfdata_fundacao;
+    public javax.swing.JTextField jtfhorario_abertura;
     public javax.swing.JTextField jtfnome_fantasia;
     public javax.swing.JTextField jtfrazao_social;
     // End of variables declaration//GEN-END:variables

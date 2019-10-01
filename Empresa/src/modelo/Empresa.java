@@ -5,6 +5,7 @@
  */
 
 package modelo;
+import java.time.LocalDate;
 /**
  *
  * @author Administrador
@@ -15,7 +16,7 @@ public class Empresa {
     private String nome_fantasia;
     private String razao_social;
     private String horario_abertura;
-    private String data_fundacao;
+    private LocalDate data_fundacao;
 
     public Integer getCodigo() {
         return codigo;
@@ -54,11 +55,11 @@ public class Empresa {
         this.horario_abertura = horario_abertura;
     }
 
-    public String getData_fundacao() {
+    public LocalDate getData_fundacao() {
         return data_fundacao;
     }
 
-    public void setData_fundacao(String data_funcionamento) {
+    public void setData_fundacao(LocalDate data_funcionamento) {
         this.data_fundacao = data_funcionamento;
     }
     
